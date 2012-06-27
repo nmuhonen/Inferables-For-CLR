@@ -7,7 +7,7 @@ using Inferables.GenBindings;
 
 namespace Inferables
 {
-    //Some comment
+    //Other comment
     public class Binding: Hashable<Binding>, IAllowedBinding
     {
         public IEnumerable<BindingMap> Maps { get; private set; }
