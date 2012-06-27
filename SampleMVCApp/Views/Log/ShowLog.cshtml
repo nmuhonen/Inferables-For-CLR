@@ -1,0 +1,42 @@
+﻿@model SampleMVCApp.ViewModels.Log.ShowLogViewModel
+
+@{
+    ViewBag.Title = "Show The Log";
+}
+
+<h2>Heres the Log so far..</h2>
+<br />
+
+@foreach (var messageGroup in Model.MessageGroups)
+{
+   <text>Log for
+   <b>@messageGroup.Title</b>
+   <br />
+   Started at @messageGroup.Time
+   <br />
+   <br />
+    
+<table style="border-spacing:5px;">
+    <thead>
+        <tr>
+            <td><b>Date</b></td>
+            <td><b>Category</b></td>
+            <td><b>Message</b></td>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var logMessage in messageGroup.Messages)
+    {
+        <tr>
+            <td>@logMessage.Time</td>
+            <td>@logMessage.Category</td>
+            <td>@logMessage.Message</td>
+        </tr>
+    }
+    </tbody>
+
+</table>
+<br />
+<br />
+    </text>
+}

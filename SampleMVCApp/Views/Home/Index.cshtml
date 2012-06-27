@@ -1,0 +1,12 @@
+﻿@model SampleMVCApp.ViewModels.Home.HomeViewModel
+
+@{
+    ViewBag.Title = "What does the internet think about you?";
+}
+
+<h2>What does the internet think about you?</h2>
+
+It thinks this: <b>@Model.Message</b>
+<br />
+<br />
+@Html.ActionLink("(View Log Here)", "ShowLog", "Log", null, new { target = "logWindow" });
