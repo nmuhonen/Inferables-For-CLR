@@ -1,7 +1,7 @@
 Inferables-for-CLR
 ==================
 
-Dependecy Injection. Its been around for a while and generally requires some sort of configuration. Inspired by rails and other convention based approaches, Inferables creates a depency resolution system, that is based on following location standards for your project. Lets look at an example.
+Dependecy Injection. Its been around for a while and generally requires some sort of configuration. Inspired by rails and other convention based approaches, Inferables creates a depency resolution system that is based on following location standards for your project. Lets look at an example.
 
 Lets say your have some injectable classes defined somewhere- a set of loggers for instance:
 
@@ -49,12 +49,12 @@ namespace SnarkyServiceLib
     public class SnarkyService
     {    
         private ILogger traceLogger;
-        private ILogger consoleLogger;  
+        private ILogger debugLogger;  
     
-        public SnarkyService(ILogger traceLogger, ILogger consoleLogger)
+        public SnarkyService(ILogger traceLogger, ILogger debugLogger)
         {
             this.traceLogger = traceLogger;
-            this.consoleLogger = consoleLogger;
+            this.consoleLogger = debugLogger;
         }
         
         public string GetSnarkyMessage()
@@ -74,7 +74,7 @@ namespace SnarkyServiceLib
 }
 ```
 
-With Inferables for clr, dependcy injection is easy- no config:
+With Inferables for clr, dependcy injection is managed my relative namespace location. So in the following code:
 
 ```c#
 var module = ModuleManager.CreateModule();
@@ -82,3 +82,11 @@ var snarkyService = module.Get<ISnarkyService>();
 
 var message = snarkyService.GetSnarkyMessage();
 ```
+
+Inferables creates an implementation for ```c# module.Get<ISnarkyService>()``` that looks like this:
+
+```c#
+return new SnarkyService(new LoggerStuff.TraceLogger(), new LoggerStuff.DebugLogger());
+```
+
+Try it out for yourself!
