@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Inferables.GenBindings
 {
-    public interface IInjectableModule: IModule, IBindingContainer
+    public interface IInjectableModule: IModule
     {
         Singleton GetSingleton<T>(string name);
     }

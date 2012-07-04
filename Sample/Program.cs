@@ -20,7 +20,7 @@ namespace Sample
             var module2 = ModuleManager.CreateModule("~.Mocks,~");
             DemoInferables(module2);
 
-            //and once more, now with all types generated and cached
+            //and once more, now with all factory types generated and cached
             DemoInferables(module2);
         }
        
@@ -56,8 +56,6 @@ namespace Sample
             factory.GetFoo4().Dump("Value for GetFoo4()");
             factory.GetFoo5().Dump("Value for GetFoo5()");
             factory.GetFoo6().Dump("Value for GetFoo6()");
-
-
 
         }
 

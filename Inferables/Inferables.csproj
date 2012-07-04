@@ -67,7 +67,6 @@
   <ItemGroup>
     <Compile Include="Binding.cs" />
     <Compile Include="BindingMap.cs" />
-    <Compile Include="IBindingContainer.cs" />
     <Compile Include="Internal\CustomFactoryDefinition.cs" />
     <Compile Include="Internal\CustomFactoryGenerator.cs" />
     <Compile Include="Internal\CustomFactoryMethodMap.cs" />

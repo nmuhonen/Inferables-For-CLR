@@ -6,12 +6,8 @@ using Inferables.GenBindings;
 
 namespace Inferables.Internal
 {
-    internal class Module: IInjectableModule
+    internal class Module: IInjectableModule, IAllowedBinding
     {
-        public Binding Binding
-        {
-            get { return Registry.BindingRegistry.Binding; }
-        }
 
         public ModuleRegistry Registry { get; private set; }
 
@@ -113,6 +109,16 @@ namespace Inferables.Internal
         {
             Registry.GetTypeFactory(type, true, null, this);
             return this;
+        }
+
+        public Binding Binding
+        {
+            get { return Registry.BindingRegistry.Binding; }
+        }
+
+        public IEnumerable<BindingMap> Maps
+        {
+            get { return Registry.BindingRegistry.Binding.Maps; }
         }
     }
 }

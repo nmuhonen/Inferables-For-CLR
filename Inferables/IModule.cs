@@ -6,8 +6,10 @@ using Inferables.GenBindings;
 
 namespace Inferables
 {
-    public interface IModule: IBindingContainer
+    public interface IModule
     {
+        Binding Binding { get; }
+
         T Get<T>();
         object Get(Type type);
         T Get<T>(string name);

@@ -32,13 +32,6 @@ namespace Inferables
                 }
 
                 var binding = dependency as IAllowedBinding;
-                if (binding == null)
-                {
-                    var container = dependency as IBindingContainer;
-                    if (container != null)
-                        binding = container.Binding;
-                }
-
 
                 if (binding != null)
                 {
