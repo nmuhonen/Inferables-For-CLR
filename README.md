@@ -83,7 +83,7 @@ var snarkyService = module.Get<ISnarkyService>();
 var message = snarkyService.GetSnarkyMessage();
 ```
 
-Inferables creates an implementation for ```c# module.Get<ISnarkyService>()``` that looks like this:
+Inferables creates an implementation for `module.Get<ISnarkyService>()` that looks like this:
 
 ```c#
 return new SnarkyService(new LoggerStuff.TraceLogger(), new LoggerStuff.DebugLogger());
