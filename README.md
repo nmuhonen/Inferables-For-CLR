@@ -1,7 +1,7 @@
 Inferables-for-CLR
 ==================
 
-Dependecy Injection. Its been around for a while and generally requires some sort of configuration. Inspired by rails and other convention based approaches, Inferables creates a depency resolution system that is based on where code is located relative to project namespaces. Lets look at an example.
+Dependecy Injection. Its been around for a while and generally requires some sort of configuration. Inspired by rails and other convention based approaches, Inferables creates a depency resolution system that is based on where code is located and named relative to project namespaces. Lets look at an example.
 
 Lets say your have some injectable classes defined somewhere- a set of loggers for instance:
 
