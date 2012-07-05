@@ -131,7 +131,7 @@ namespace LoggerStuff.Mocks
 And change your code:
 
 ```c#
-var module = <span id="highlight">ModuleManager.CreateModule("~.Mocks,~")</span>;
+var module = <u><i>ModuleManager.CreateModule("~.Mocks,~")</i></u>;
 var snarkyService = module.Get<ISnarkyService>();
 
 var message = snarkyService.GetSnarkyMessage();
@@ -144,7 +144,13 @@ With these changes, Inferables now acts like this:
    <Li>If it can't find it there, then look for implementation types that are found in the same namespace as the target type.</li>
 </ol>
 
-With these dependency resolution changes, Inferables creates an implementation for ```c#module.Get<ISnarkyService>()``` that looks like this:
+With these dependency resolution changes, Inferables creates an implementation for 
+
+```c#
+module.Get<ISnarkyService>()
+``` 
+
+that looks like this:
 
 ```c#
 return new SnarkyService(new LoggerStuff.TraceLogger(), new LoggerStuff.Mocks.MockDebugLogger());
