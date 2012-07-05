@@ -1,10 +1,9 @@
 Inferables-for-CLR
 ==================
 
-Dependency Injection, arghh, a configuration eyesore! (even with exceptional frameworks like Ninject and Castle Windsor.) Seeing a lot of my projects could have dependencies managed by a patterns based approach instead, I started working on a new solution on <a href="https://github.com/nmuhonen/Inferables-For-CLR" title="Github">Github</a>, hoping to change a small part of the world (or at least my world for that matter). Inspired by convention over configuration approaches, <i>Inferables For CLR</i> provides a dependency resolution system that is based on where code is located and named relative to project namespaces, not a configuration mechanism- allowing easier management of standard injection patterns just by putting stuff in the right place :)
+Dependency Injection, arghh, a configuration eyesore! (even with exceptional lightweight frameworks like NInject and Castle Windsor.) Hoping to change a small part of the world (or at least my world for that matter), I started working on a new solution on <a href="https://github.com/nmuhonen/Inferables-For-CLR" title="Github">Github</a>. <i>Inferables For CLR</i> is inspired by convention over configuration software approaches, providing a dependency resolution system that is based on where code is located and named relative to project namespaces, instead of a configuration mechanism. The result is easier management of standard injection patterns just by putting stuff in the right place :)
 
-An Example:
------------
+<h4>An Example:</h4>
 
 Lets say your have some injectable classes defined somewhere- a set of loggers for instance:
 
@@ -145,12 +144,12 @@ With these changes, Inferables now acts like this:
    <Li>If it can't find it there, then look for implementation types that are found in the same namespace as the target type.</li>
 </ol>
 
-With these resolution changes, Inferables creates an implementation for ```c#module.Get<ISnarkyService>()``` that looks like this:
+With these dependency resolution changes, Inferables creates an implementation for ```c#module.Get<ISnarkyService>()``` that looks like this:
 
 ```c#
 return new SnarkyService(new LoggerStuff.TraceLogger(), new LoggerStuff.Mocks.MockDebugLogger());
 ```
 
-<h4>What's Next:</h4>
+<h4>Enjoy</h4>
 
-Right now, I am finishing features and testing for a .9 release, and would like your feedback. Try it out for yourself: <a href="https://github.com/nmuhonen/Inferables-for-CLR" title="https://github.com/nmuhonen/Inferables-for-CLR">https://github.com/nmuhonen/Inferables-for-CLR</a> and happy coding :)
+Try it out for yourself: <a href="https://github.com/nmuhonen/Inferables-for-CLR" title="https://github.com/nmuhonen/Inferables-for-CLR">https://github.com/nmuhonen/Inferables-for-CLR</a> and happy coding :)
