@@ -131,7 +131,7 @@ namespace LoggerStuff.Mocks
 And change your code:
 
 ```c#
-var module = <u><i>ModuleManager.CreateModule("~.Mocks,~")</i></u>;
+var module = ModuleManager.CreateModule("~.Mocks,~");
 var snarkyService = module.Get<ISnarkyService>();
 
 var message = snarkyService.GetSnarkyMessage();
