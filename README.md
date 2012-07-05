@@ -1,4 +1,4 @@
-Inferables-for-CLR
+Inferables for CLR
 ==================
 
 Dependency Injection, arghh, a configuration eyesore! -even with exceptional lightweight frameworks like NInject and Castle Windsor. Hoping to change a small part of the world (or at least my world for that matter), I started working on a new solution on <a href="https://github.com/nmuhonen/Inferables-For-CLR" title="Github">Github</a>. <i>Inferables For CLR</i> is inspired by convention over configuration software approaches, providing a dependency resolution system that is based on where code is located and named relative to project namespaces, instead of a configuration mechanism. The result is easier management of standard injection patterns just by putting stuff in the right place :)
