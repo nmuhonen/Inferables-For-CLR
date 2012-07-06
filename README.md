@@ -47,7 +47,7 @@ namespace SnarkyServiceLib
         string GetSnarkyMessage();   
     }
     
-    public class SnarkyService
+    public class SnarkyService: ISnarkyService
     {    
         private ILogger traceLogger;
         private ILogger debugLogger;  
@@ -67,7 +67,7 @@ namespace SnarkyServiceLib
             
             string message = "SnarkyNess!";
         
-            debugLogger.Write("Created Message);
+            debugLogger.Write("Created Message.");
             
             return message;
         }
