@@ -55,7 +55,7 @@ namespace SnarkyServiceLib
         public SnarkyService(ILogger traceLogger, ILogger debugLogger)
         {
             this.traceLogger = traceLogger;
-            this.consoleLogger = debugLogger;
+            this.debugLogger = debugLogger;
         }
         
         public string GetSnarkyMessage()
